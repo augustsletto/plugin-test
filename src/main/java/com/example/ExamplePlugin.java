@@ -48,7 +48,7 @@ public class ExamplePlugin extends Plugin
 
 	@Subscribe
 	public void onOverheadTestChanged(OverheadTextChanged e){
-		if (e.getActor().equals(client.getLocalPlayer()) && e.getOverheadText().equals("test")){
+		if (e.getActor().equals(client.getLocalPlayer()) && e.getOverheadText().equals("Test")){
 			client.getLocalPlayer().setOverheadText("Success");
 		}
 	}
