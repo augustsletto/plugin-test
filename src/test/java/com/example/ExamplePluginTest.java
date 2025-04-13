@@ -1,6 +1,8 @@
 package com.example;
 
+import net.runelite.api.events.OverheadTextChanged;
 import net.runelite.client.RuneLite;
+import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
 public class ExamplePluginTest
@@ -9,5 +11,10 @@ public class ExamplePluginTest
 	{
 		ExternalPluginManager.loadBuiltin(ExamplePlugin.class);
 		RuneLite.main(args);
+	}
+
+	@Subscribe
+	public void onOverHeadTextChanged(OverheadTextChanged e) {
+		if (e.getActor().equals("example"))
 	}
 }

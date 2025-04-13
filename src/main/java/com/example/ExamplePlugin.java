@@ -45,6 +45,9 @@ public class ExamplePlugin extends Plugin
 		}
 	}
 
+
+
+
 	@Provides
 	ExampleConfig provideConfig(ConfigManager configManager)
 	{
