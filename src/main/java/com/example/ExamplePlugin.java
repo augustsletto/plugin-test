@@ -7,6 +7,7 @@ import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
 import net.runelite.api.GameState;
 import net.runelite.api.events.GameStateChanged;
+import net.runelite.api.events.OverheadTextChanged;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.eventbus.Subscribe;
 import net.runelite.client.plugins.Plugin;
@@ -42,6 +43,13 @@ public class ExamplePlugin extends Plugin
 		if (gameStateChanged.getGameState() == GameState.LOGGED_IN)
 		{
 			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Example  " + config.greeting(), null);
+		}
+	}
+
+	@Subscribe
+	public void onOverheadTestChanged(OverheadTextChanged e){
+		if (e.getActor().equals(client.getLocalPlayer()) && e.getOverheadText().equals("test")){
+			client.getLocalPlayer().setOverheadText("Success");
 		}
 	}
 
