@@ -13,8 +13,5 @@ public class ExamplePluginTest
 		RuneLite.main(args);
 	}
 
-	@Subscribe
-	public void onOverHeadTextChanged(OverheadTextChanged e) {
-		if (e.getActor().equals("example"))
-	}
+
 }
